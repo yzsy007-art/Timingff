@@ -3,16 +3,22 @@
 <head>
   <title>타이밍</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 🔥 명언 스플래시 -->
+<!-- 🔥 스플래시 -->
 <div id="splash">
   <h1 id="quote"></h1>
 </div>
 
-<!-- 🔥 메인 앱 -->
+<!-- 🔥 엔딩 -->
+<div id="ending">
+  <h1>후회없는 하루였기를</h1>
+</div>
+
+<!-- 🔥 메인 -->
 <div class="app" id="main">
 
   <div class="header">
@@ -25,7 +31,7 @@
         <div id="progressBar" class="progress-bar"></div>
       </div>
 
-      <div id="percentText" class="percent-text">0%</div>
+      <div id="percentText">0%</div>
     </div>
 
     <button onclick="changeDay(1)">→</button>
