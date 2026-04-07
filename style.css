@@ -1,10 +1,14 @@
-body {
+/* 🔥 기본 설정 */
+html, body {
   margin: 0;
+  height: 100%;
+  overflow: hidden;
   background: #0a0a0a;
   font-family: -apple-system, BlinkMacSystemFont;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* 🔥 스플래시 */
+/* 🔥 스플래시 (명언) */
 #splash {
   position: fixed;
   width: 100%;
@@ -15,6 +19,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
+  z-index: 100;
 }
 
 #quote {
@@ -33,7 +38,7 @@ body {
   100% { opacity: 0; }
 }
 
-/* 🔥 엔딩 (페이드) */
+/* 🔥 엔딩 화면 (페이드) */
 #ending {
   position: fixed;
   width: 100%;
@@ -46,6 +51,7 @@ body {
   opacity: 0;
   pointer-events: none;
   font-size: 24px;
+  z-index: 200;
 }
 
 .show-ending {
@@ -59,72 +65,109 @@ body {
   100% { opacity: 0; }
 }
 
-/* 앱 */
+/* 🔥 메인 앱 */
 .app {
-  width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* 🔥 모바일 최적 높이 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
   color: white;
   padding: 20px;
+  box-sizing: border-box;
+
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* 🔥 상단 */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* 버튼 */
 button {
   background: none;
   border: none;
   color: white;
   font-size: 22px;
+  padding: 8px;
 }
 
+/* 제목 + 퍼센트 */
 .title-box {
   text-align: center;
 }
 
+/* 🔥 진행 바 */
 .progress-container {
+  margin-top: 5px;
   background: white;
   height: 10px;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 #progressBar {
   height: 100%;
   background: navy;
   width: 0%;
+  transition: 0.3s;
 }
 
-/* 카드 */
+#percentText {
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+/* 🔥 3D 카드 */
 .section {
   margin-top: 25px;
   padding: 15px;
   border-radius: 15px;
   background: #1c1c1e;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  box-shadow: 
+    5px 5px 15px rgba(0,0,0,0.6),
+    -5px -5px 15px rgba(255,255,255,0.05);
 }
 
+/* 🔥 allways 네이비 */
 .allways {
   background: #0b1f3a;
 }
 
+/* 할 일 */
+.task {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 완료 */
 .done {
   opacity: 0.4;
   text-decoration: line-through;
 }
 
+/* 입력창 */
 .input-box {
   display: flex;
+  align-items: center;
   margin-top: 10px;
 }
 
 input {
   flex: 1;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px; /* 🔥 확대 방지 */
 }
 
+/* + 버튼 */
 .add-btn {
-  font-size: 24px;
+  margin-left: 10px;
+  font-size: 26px;
 }
